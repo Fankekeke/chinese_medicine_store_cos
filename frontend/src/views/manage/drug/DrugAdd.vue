@@ -46,16 +46,29 @@
               'classification',
               { rules: [{ required: true, message: '请输入药材类别!' }] }
               ]">
-              <a-select-option value="1">中药材</a-select-option>
-              <a-select-option value="2">中药饮片</a-select-option>
-              <a-select-option value="3">中西成药</a-select-option>
-              <a-select-option value="4">化学原料药</a-select-option>
-              <a-select-option value="5">抗生素</a-select-option>
-              <a-select-option value="6">生化药材</a-select-option>
-              <a-select-option value="7">放射性药材</a-select-option>
-              <a-select-option value="8">血清</a-select-option>
-              <a-select-option value="9">诊断药材</a-select-option>
+              <a-select-option value="1">根茎类</a-select-option>
+              <a-select-option value="2">果实种子类</a-select-option>
+              <a-select-option value="3">茎木皮类</a-select-option>
+              <a-select-option value="4">花叶类</a-select-option>
+              <a-select-option value="5">全草类</a-select-option>
+              <a-select-option value="6">动物药类</a-select-option>
+              <a-select-option value="7">矿物药类</a-select-option>
+              <a-select-option value="8">其他类</a-select-option>
             </a-select>
+          </a-form-item>
+        </a-col>
+        <a-col :span="6">
+          <a-form-item label='药材性' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'nature'
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="6">
+          <a-form-item label='药材味' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'taste'
+            ]"/>
           </a-form-item>
         </a-col>
         <a-col :span="6">

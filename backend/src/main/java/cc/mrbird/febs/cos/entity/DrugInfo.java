@@ -117,6 +117,8 @@ public class DrugInfo implements Serializable {
      * 药品图片
      */
     private String images;
+    private String nature;
+    private String taste;
 
 
 }

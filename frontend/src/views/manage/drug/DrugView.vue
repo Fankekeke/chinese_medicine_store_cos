@@ -28,15 +28,14 @@
           <span v-if="drugData.category == 5">膳食纤维</span>
         </a-col>
         <a-col :span="8"><b>药材类别：</b>
-          <span v-if="drugData.classification == 1">中药材</span>
-          <span v-if="drugData.classification == 2">中药饮片</span>
-          <span v-if="drugData.classification == 3">中西成药</span>
-          <span v-if="drugData.classification == 4">化学原料药</span>
-          <span v-if="drugData.classification == 5">抗生素</span>
-          <span v-if="drugData.classification == 6">生化药材</span>
-          <span v-if="drugData.classification == 7">放射性药材</span>
-          <span v-if="drugData.classification == 8">血清</span>
-          <span v-if="drugData.classification == 9">诊断药材</span>
+          <span v-if="drugData.classification == 1">根茎类</span>
+          <span v-if="drugData.classification == 2">果实种子类</span>
+          <span v-if="drugData.classification == 3">茎木皮类</span>
+          <span v-if="drugData.classification == 4">花叶类</span>
+          <span v-if="drugData.classification == 5">全草类</span>
+          <span v-if="drugData.classification == 6">动物药类</span>
+          <span v-if="drugData.classification == 7">矿物药类</span>
+          <span v-if="drugData.classification == 8">其他类</span>
         </a-col>
         <a-col :span="8"><b>通用名：</b>
           {{ drugData.commonName }}

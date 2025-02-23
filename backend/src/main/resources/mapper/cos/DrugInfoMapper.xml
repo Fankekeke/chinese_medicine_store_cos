@@ -23,6 +23,8 @@
         manufacturer,
         unit_price,
         create_date,
+        nature,
+        taste,
         images
         from
         drug_info
@@ -36,6 +38,12 @@
         </if>
         <if test="drugInfo.brand != null and drugInfo.brand != ''">
             AND brand LIKE CONCAT('%',#{drugInfo.brand},'%')
+        </if>
+        <if test="drugInfo.nature != null and drugInfo.nature != ''">
+            AND nature LIKE CONCAT('%',#{drugInfo.nature},'%')
+        </if>
+        <if test="drugInfo.taste != null and drugInfo.taste != ''">
+            AND taste LIKE CONCAT('%',#{drugInfo.taste},'%')
         </if>
         <if test="drugInfo.category != null">
             AND category = #{drugInfo.category}

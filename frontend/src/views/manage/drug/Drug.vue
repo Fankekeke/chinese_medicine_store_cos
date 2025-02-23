@@ -15,18 +15,18 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="药材编号"
+                label="药材性"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.code"/>
+                <a-input v-model="queryParams.nature"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="品牌"
+                label="药材味"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.brand"/>
+                <a-input v-model="queryParams.taste"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="24">
@@ -165,23 +165,21 @@ export default {
         customRender: (text, row, index) => {
           switch (text) {
             case 1:
-              return <a-tag>中药材</a-tag>
+              return <a-tag>根茎类</a-tag>
             case 2:
-              return <a-tag>中药饮片</a-tag>
+              return <a-tag>果实种子类</a-tag>
             case 3:
-              return <a-tag>中西成药</a-tag>
+              return <a-tag>茎木皮类</a-tag>
             case 4:
-              return <a-tag>化学原料药</a-tag>
+              return <a-tag>花叶类</a-tag>
             case 5:
-              return <a-tag>抗生素</a-tag>
+              return <a-tag>全草类</a-tag>
             case 6:
-              return <a-tag>生化药材</a-tag>
+              return <a-tag>动物药类</a-tag>
             case 7:
-              return <a-tag>放射性药材</a-tag>
+              return <a-tag>矿物药类</a-tag>
             case 8:
-              return <a-tag>血清</a-tag>
-            case 9:
-              return <a-tag>诊断药材</a-tag>
+              return <a-tag>其他类</a-tag>
             default:
               return '- -'
           }
