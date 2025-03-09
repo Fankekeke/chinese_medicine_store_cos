@@ -14,10 +14,10 @@ import java.util.LinkedHashMap;
 public interface IDrugInfoService extends IService<DrugInfo> {
 
     /**
-     * 分页获取药品信息
+     * 分页获取药材信息
      *
      * @param page     分页对象
-     * @param drugInfo 药品信息
+     * @param drugInfo 药材信息
      * @return 结果
      */
     IPage<LinkedHashMap<String, Object>> selectDrugPage(Page<DrugInfo> page, DrugInfo drugInfo);

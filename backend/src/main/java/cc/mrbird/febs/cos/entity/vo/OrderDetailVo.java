@@ -11,7 +11,7 @@ public class OrderDetailVo {
     private Integer userId;
 
     /**
-     * 购买药品信息
+     * 购买药材信息
      */
     private String drugString;
 }

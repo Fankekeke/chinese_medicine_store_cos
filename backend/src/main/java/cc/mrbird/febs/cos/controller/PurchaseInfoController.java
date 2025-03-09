@@ -24,10 +24,10 @@ public class PurchaseInfoController {
     private final IPurchaseInfoService purchaseInfoService;
 
     /**
-     * 分页获取药品采购信息
+     * 分页获取药材采购信息
      *
      * @param page         分页对象
-     * @param purchaseInfo 药品采购信息
+     * @param purchaseInfo 药材采购信息
      * @return 结果
      */
     @GetMapping("/page")
@@ -47,7 +47,7 @@ public class PurchaseInfoController {
     }
 
     /**
-     * 采购单详情-药品物流
+     * 采购单详情-药材物流
      *
      * @param purchaseId 采购ID
      * @return 结果
@@ -68,9 +68,9 @@ public class PurchaseInfoController {
     }
 
     /**
-     * 新增药品采购信息
+     * 新增药材采购信息
      *
-     * @param purchaseInfo 药品采购信息
+     * @param purchaseInfo 药材采购信息
      * @return 结果
      */
     @PostMapping
@@ -81,9 +81,9 @@ public class PurchaseInfoController {
     }
 
     /**
-     * 修改药品采购信息
+     * 修改药材采购信息
      *
-     * @param purchaseInfo 药品采购信息
+     * @param purchaseInfo 药材采购信息
      * @return 结果
      */
     @PutMapping
@@ -92,10 +92,10 @@ public class PurchaseInfoController {
     }
 
     /**
-     * 删除药品采购信息
+     * 删除药材采购信息
      *
      * @param ids ids
-     * @return 药品采购信息
+     * @return 药材采购信息
      */
     @DeleteMapping("/{ids}")
     public R deleteByIds(@PathVariable("ids") List<Integer> ids) {

@@ -45,7 +45,7 @@ public class PharmacyInventoryServiceImpl extends ServiceImpl<PharmacyInventoryM
     }
 
     /**
-     * 获取药品信息
+     * 获取药材信息
      *
      * @param key key
      * @return 结果
@@ -66,13 +66,13 @@ public class PharmacyInventoryServiceImpl extends ServiceImpl<PharmacyInventoryM
     public boolean batchPutInventory(Integer pharmacyId, String pharmacyInventorys) throws Exception {
         List<PharmacyInventory> inventoryList = JSONUtil.toList(pharmacyInventorys, PharmacyInventory.class);
         if (pharmacyId == null || CollectionUtil.isEmpty(inventoryList)) {
-            throw new FebsException("所属药店和药品信息不能为空！");
+            throw new FebsException("所属药店和药材信息不能为空！");
         }
         List<Integer> drugIds = inventoryList.stream().map(PharmacyInventory::getDrugId).filter(Objects::nonNull).collect(Collectors.toList());
         if (CollectionUtil.isEmpty(drugIds)) {
             return false;
         }
-        // 根据药品编号查询库存
+        // 根据药材编号查询库存
         List<PharmacyInventory> pharmacyInventoryList = this.list(Wrappers.<PharmacyInventory>lambdaQuery().eq(PharmacyInventory::getPharmacyId, pharmacyId).in(PharmacyInventory::getDrugId, drugIds));
         // 转MAP
         Map<Integer, PharmacyInventory> inventoryMap = pharmacyInventoryList.stream().collect(Collectors.toMap(PharmacyInventory::getDrugId, e -> e));

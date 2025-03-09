@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.mrbird.febs.cos.dao.DrugInfoMapper">
 
-    <!-- 分页获取药品信息 -->
+    <!-- 分页获取药材信息 -->
     <select id="selectDrugPage" resultType="java.util.LinkedHashMap">
         select
         id,
@@ -25,6 +25,9 @@
         create_date,
         nature,
         taste,
+        measure,
+        alarm_num,
+        taboo,
         images
         from
         drug_info

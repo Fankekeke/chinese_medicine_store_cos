@@ -34,7 +34,7 @@ public class InventoryStatistics implements Serializable {
     private Integer pharmacyId;
 
     /**
-     * 药品ID
+     * 药材ID
      */
     private Integer drugId;
 

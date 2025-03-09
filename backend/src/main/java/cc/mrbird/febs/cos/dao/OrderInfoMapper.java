@@ -60,7 +60,7 @@ public interface OrderInfoMapper extends BaseMapper<OrderInfo> {
     List<LinkedHashMap<String, Object>> selectOrderPriceWithinDays(@Param("pharmacyId") Integer pharmacyId);
 
     /**
-     * 订单销售药品类别统计
+     * 订单销售药材类别统计
      *
      * @return 结果
      */

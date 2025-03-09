@@ -2,7 +2,7 @@
   <a-card :bordered="false" class="card-area">
     <div style="background:#ECECEC; padding:30px;margin-top: 30px;margin-bottom: 30px">
       <a-row :gutter="30">
-        <a-col :span="6" v-for="(item, index) in workStatusList" :key="index">
+        <a-col :span="8" v-for="(item, index) in workStatusList" :key="index">
           <a-card :bordered="false">
             <span slot="title">
               <a-badge status="processing"/>

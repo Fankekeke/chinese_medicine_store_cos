@@ -28,10 +28,10 @@ public class DrugInfoController {
     private final IPharmacyInfoService pharmacyInfoService;
 
     /**
-     * 分页获取药品信息
+     * 分页获取药材信息
      *
      * @param page     分页对象
-     * @param drugInfo 药品信息
+     * @param drugInfo 药材信息
      * @return 结果
      */
     @GetMapping("/page")
@@ -69,9 +69,9 @@ public class DrugInfoController {
     }
 
     /**
-     * 新增药品信息
+     * 新增药材信息
      *
-     * @param drugInfo 药品信息
+     * @param drugInfo 药材信息
      * @return 结果
      */
     @PostMapping
@@ -82,9 +82,9 @@ public class DrugInfoController {
     }
 
     /**
-     * 修改药品信息
+     * 修改药材信息
      *
-     * @param drugInfo 药品信息
+     * @param drugInfo 药材信息
      * @return 结果
      */
     @PutMapping
@@ -93,10 +93,10 @@ public class DrugInfoController {
     }
 
     /**
-     * 删除药品信息
+     * 删除药材信息
      *
      * @param ids ids
-     * @return 药品信息
+     * @return 药材信息
      */
     @DeleteMapping("/{ids}")
     public R deleteByIds(@PathVariable("ids") List<Integer> ids) {

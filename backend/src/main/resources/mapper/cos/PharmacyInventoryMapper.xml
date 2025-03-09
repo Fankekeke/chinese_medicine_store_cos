@@ -14,6 +14,7 @@
         pi2.code as pharmacyCode,
         di.name as drugName,
         di.brand,
+        di.measure,
         di.category,
         di.images
         from
@@ -60,7 +61,7 @@
         and pin.pharmacy_id = #{ pharmacyId }
     </select>
 
-    <!-- 获取药品信息 -->
+    <!-- 获取药材信息 -->
     <select id="selectPharmacyDrugList" resultType="java.util.LinkedHashMap">
         select
         pin.id,

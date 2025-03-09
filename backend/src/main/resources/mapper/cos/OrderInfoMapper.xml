@@ -48,6 +48,9 @@
         <if test="orderInfo.pharmacyId != null">
             AND phi.user_id = #{orderInfo.pharmacyId}
         </if>
+        <if test="orderInfo.startDate != null and orderInfo.startDate != '' and orderInfo.endDate != null and orderInfo.endDate != ''">
+            AND oi.create_date between #{orderInfo.startDate} and #{orderInfo.endDate}
+        </if>
         order by
         oi.create_date desc
     </select>
@@ -57,7 +60,7 @@
         SELECT IFNULL(SUM(oi.total_cost), 0) FROM order_info oi
     </select>
 
-    <!-- 订单销售药品类别统计 -->
+    <!-- 订单销售药材类别统计 -->
     <select id="selectOrderDrugType" resultType="java.util.LinkedHashMap">
         select sum(od.quantity) as count, di.name from
         order_detail od

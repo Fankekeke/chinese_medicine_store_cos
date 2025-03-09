@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * 药品管理
+ * 药材管理
  *
  * @author FanK
  */
@@ -29,12 +29,12 @@ public class DrugInfo implements Serializable {
     private Integer id;
 
     /**
-     * 药品编号
+     * 药材编号
      */
     private String code;
 
     /**
-     * 药品名称
+     * 药材名称
      */
     private String name;
 
@@ -49,7 +49,7 @@ public class DrugInfo implements Serializable {
     private Integer category;
 
     /**
-     * 药品类别
+     * 药材类别
      */
     private Integer classification;
 
@@ -112,9 +112,12 @@ public class DrugInfo implements Serializable {
      * 创建时间
      */
     private String createDate;
+    private String measure;
+    private String taboo;
+    private Integer alarmNum;
 
     /**
-     * 药品图片
+     * 药材图片
      */
     private String images;
     private String nature;

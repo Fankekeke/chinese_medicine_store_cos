@@ -64,14 +64,20 @@ public class StockAlertInfoServiceImpl extends ServiceImpl<StockAlertInfoMapper,
             return;
         }
         List<Integer> drugIds = inventoryList.stream().map(PharmacyInventory::getDrugId).distinct().collect(Collectors.toList());
-        // 药品信息
+        // 药材信息
         List<DrugInfo> drugInfoList = (List<DrugInfo>) drugInfoService.listByIds(drugIds);
         Map<Integer, String> drugMap = drugInfoList.stream().collect(Collectors.toMap(DrugInfo::getId, DrugInfo::getName));
+        Map<Integer, DrugInfo> drugInfoMap = drugInfoList.stream().collect(Collectors.toMap(DrugInfo::getId, e -> e));
 
         // 待更新数据
         List<StockAlertInfo> stockAlertInfoList = new ArrayList<>();
         for (PharmacyInventory inventory : inventoryList) {
-            if (inventory.getReserve() >= 15) {
+            DrugInfo drugInfo = drugInfoMap.get(inventory.getDrugId());
+
+            Integer alarmFlag = drugInfo.getAlarmNum();
+            if (alarmFlag != null && inventory.getReserve() >= alarmFlag) {
+                continue;
+            } else if (alarmFlag != null && inventory.getReserve() >= 15) {
                 continue;
             }
             StockAlertInfo stockAlert = new StockAlertInfo();
@@ -79,7 +85,7 @@ public class StockAlertInfoServiceImpl extends ServiceImpl<StockAlertInfoMapper,
             stockAlert.setShopId(inventory.getPharmacyId());
             stockAlert.setStatus(0);
             stockAlert.setCreateDate(DateUtil.formatDateTime(new Date()));
-            stockAlert.setRemark("药品【" + drugMap.get(inventory.getDrugId()) + "】库存数量为 " + inventory.getReserve() + ", 请尽快补货");
+            stockAlert.setRemark("药材【" + drugMap.get(inventory.getDrugId()) + "】库存数量为 " + inventory.getReserve() + ", 请尽快补货");
             stockAlertInfoList.add(stockAlert);
         }
         if (CollectionUtil.isNotEmpty(stockAlertInfoList)) {

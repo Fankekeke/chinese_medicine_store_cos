@@ -29,6 +29,14 @@
                 <a-input v-model="queryParams.pharmacyName"/>
               </a-form-item>
             </a-col>
+            <a-col :md="6" :sm="24" >
+              <a-form-item
+                label="下单时间"
+                :labelCol="{span: 5}"
+                :wrapperCol="{span: 18, offset: 1}">
+                <range-date @change="handleDateChange" ref="createTime" style="width: 100%"></range-date>
+              </a-form-item>
+            </a-col>
           </div>
           <span style="float: right; margin-top: 3px;">
             <a-button type="primary" @click="search">查询</a-button>
@@ -241,6 +249,12 @@ export default {
     this.fetch()
   },
   methods: {
+    handleDateChange (value) {
+      if (value) {
+        this.queryParams.startDate = value[0]
+        this.queryParams.endDate = value[1]
+      }
+    },
     orderStatusOpen (row) {
       this.orderStatusView.data = row
       this.orderStatusView.visiable = true

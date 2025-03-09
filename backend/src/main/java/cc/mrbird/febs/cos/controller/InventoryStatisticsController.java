@@ -37,10 +37,10 @@ public class InventoryStatisticsController {
     }
 
     /**
-     * 获取药品出入库详情
+     * 获取药材出入库详情
      *
      * @param pharmacyId 药房ID
-     * @param drugId     药品ID
+     * @param drugId     药材ID
      * @return 结果
      */
     @GetMapping("/statistics")

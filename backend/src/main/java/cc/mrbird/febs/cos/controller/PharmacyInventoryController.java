@@ -23,7 +23,7 @@ public class PharmacyInventoryController {
     private final IPharmacyInventoryService pharmacyInventoryService;
 
     /**
-     * 获取药品信息
+     * 获取药材信息
      *
      * @param key key
      * @return 结果

@@ -29,7 +29,7 @@ public class OrderDetail implements Serializable {
     private Integer id;
 
     /**
-     * 购买药品
+     * 购买药材
      */
     private Integer drugId;
 

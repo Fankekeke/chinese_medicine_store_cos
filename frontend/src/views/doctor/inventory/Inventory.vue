@@ -123,11 +123,11 @@ export default {
           </a-popover>
         }
       }, {
-        title: '数量',
+        title: '库存',
         dataIndex: 'reserve',
         customRender: (text, row, index) => {
           if (text !== null) {
-            return text + '件'
+            return text + row.measure
           } else {
             return '- -'
           }

@@ -34,7 +34,7 @@ public class StockAlertInfo implements Serializable {
     private Integer shopId;
 
     /**
-     * 药品ID
+     * 药材ID
      */
     private Integer durgId;
 

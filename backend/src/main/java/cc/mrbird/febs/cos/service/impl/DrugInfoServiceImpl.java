@@ -17,10 +17,10 @@ import java.util.LinkedHashMap;
 public class DrugInfoServiceImpl extends ServiceImpl<DrugInfoMapper, DrugInfo> implements IDrugInfoService {
 
     /**
-     * 分页获取药品信息
+     * 分页获取药材信息
      *
      * @param page     分页对象
-     * @param drugInfo 药品信息
+     * @param drugInfo 药材信息
      * @return 结果
      */
     @Override

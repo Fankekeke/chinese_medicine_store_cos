@@ -79,7 +79,7 @@ public class MedicationInfo implements Serializable {
     private String images;
 
     /**
-     * 购买药品信息
+     * 购买药材信息
      */
     @TableField(exist = false)
     private String drugString;

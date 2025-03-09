@@ -100,7 +100,7 @@ public class PharmacyInfoController {
     }
 
     /**
-     * 根据月份获取药品统计情况
+     * 根据月份获取药材统计情况
      *
      * @param date 日期
      * @return 结果

@@ -46,8 +46,16 @@
         <a-col :span="8"><b>剂型：</b>
           {{ drugData.dosageForm }}
         </a-col>
-        <a-col :span="16"><b>用法：</b>
+        <a-col :span="8"><b>用法：</b>
           {{ drugData.usages }}
+        </a-col>
+        <a-col :span="8"><b>剂量单位：</b>
+          {{ drugData.measure }}
+        </a-col>
+        <br/>
+        <br/>
+        <a-col :span="8"><b>禁忌：</b>
+          {{ drugData.taboo }}
         </a-col>
         <br/>
         <br/>

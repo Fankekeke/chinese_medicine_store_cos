@@ -73,6 +73,9 @@
             <template slot="reserveShow" slot-scope="text, record">
               <a-input-number v-model="record.reserve" :min="1" :step="1"/>
             </template>
+            <template slot="measureShow" slot-scope="text, record">
+              <span>{{ record.measure }}</span>
+            </template>
             <template slot="priceShow" slot-scope="text, record">
               <span>{{ record.unitPrice }}元</span>
             </template>
@@ -139,6 +142,10 @@ export default {
         dataIndex: 'reserve',
         scopedSlots: {customRender: 'reserveShow'}
       }, {
+        title: '单位',
+        dataIndex: 'measure',
+        scopedSlots: {customRender: 'measureShow'}
+      }, {
         title: '所属品牌',
         dataIndex: 'brand',
         scopedSlots: {customRender: 'brandShow'}
@@ -194,7 +201,8 @@ export default {
             record.classification = e.classification
             record.dosageForm = e.dosageForm
             record.unitPrice = e.unitPrice
-            record.drugId = e.drugId
+            record.measure = e.measure
+            record.drugId = e.id
             console.log(record)
           }
         })
@@ -210,7 +218,7 @@ export default {
       }
     },
     dataAdd () {
-      this.dataList.push({drugId: null, reserve: 1, brand: '', classification: '', dosageForm: '', unitPrice: ''})
+      this.dataList.push({drugId: null, reserve: 1, measure: '', brand: '', classification: '', dosageForm: '', unitPrice: ''})
     },
     getDrug () {
       this.$get('/cos/drug-info/list').then((r) => {

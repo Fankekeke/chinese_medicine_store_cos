@@ -117,7 +117,7 @@
       <br/>
       <br/>
       <a-row style="padding-left: 24px;padding-right: 24px;">
-        <a-col style="margin-bottom: 15px"><span style="font-size: 15px;font-weight: 650;color: #000c17">购买数量</span></a-col>
+        <a-col style="margin-bottom: 15px"><span style="font-size: 15px;font-weight: 650;color: #000c17">购买量</span></a-col>
         <a-col :span="6">
           <a-input-number id="inputNumber" v-model="value" :min="1" :max="drugData.reserve" style="width: 100%"/>
         </a-col>

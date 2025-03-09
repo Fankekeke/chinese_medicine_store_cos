@@ -92,7 +92,29 @@
             ]"/>
           </a-form-item>
         </a-col>
-        <a-col :span="12">
+        <a-col :span="6">
+          <a-form-item label='计量单位' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'measure',
+            { rules: [{ required: true, message: '请输入计量单位!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="6">
+          <a-form-item label='禁忌' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'taboo'
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="6">
+          <a-form-item label='库存预警量' v-bind="formItemLayout">
+            <a-input-number style="width: 100%" :min="1" v-decorator="[
+            'alarmNum'
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
           <a-form-item label='适用症状' v-bind="formItemLayout">
             <a-input v-decorator="[
             'applicableSymptoms'

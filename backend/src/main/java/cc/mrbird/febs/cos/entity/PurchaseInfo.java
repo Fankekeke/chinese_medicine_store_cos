@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * 药品采购
+ * 药材采购
  *
  * @author FanK
  */
@@ -64,7 +64,7 @@ public class PurchaseInfo implements Serializable {
     private String logistics;
 
     /**
-     * 采购药品
+     * 采购药材
      */
     private String purchaseDrug;
 
